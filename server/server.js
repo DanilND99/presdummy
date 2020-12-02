@@ -23,6 +23,7 @@ mongoose.connect(process.env.DATABASE, {
 .catch(error => console.log('Error:', error));
 
 //middlewares
+app.use(express.static("public"));
 app.use(morgan('dev')); 
 app.use(bodyParser.json({limit: '3mb'}));
 app.use(cors()); 
